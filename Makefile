@@ -20,7 +20,7 @@ BONUS_O = $(PATH_LIB)ft_lstclear.o $(PATH_LIB)ft_lstdelone.o\
 
 CC = cc 
 
-FT_CLI_SER = $(CC) $(FLGS) ft_client.c -o ft_client.o &&  $(CC) $(FLGS) ft_server.c -o ft_server.o 
+FT_CLI_SER = $(CC) $(FLGS) client.c -o client.o -Llibft -lft &&  $(CC) $(FLGS) server.c -o server.o 
 
 RM = rm -f
 
@@ -41,7 +41,7 @@ clean:
 	$(RM) $(FTS) $(BONUS_O)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) client.o server.o
 
 re: fclean all
 
