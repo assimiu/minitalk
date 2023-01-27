@@ -10,7 +10,10 @@ FTS=$(PATH_LIB)ft_atoi.o $(PATH_LIB)ft_bzero.o $(PATH_LIB)ft_calloc.o\
 	$(PATH_LIB)ft_isalpha.o $(PATH_LIB)ft_substr.o $(PATH_LIB)ft_split.o\
 	$(PATH_LIB)ft_itoa.o $(PATH_LIB)ft_strmapi.o $(PATH_LIB)ft_striteri.o\
 	$(PATH_LIB)ft_putchar_fd.o $(PATH_LIB)ft_putnbr_fd.o $(PATH_LIB)ft_putstr_fd.o\
-	$(PATH_LIB)ft_putendl_fd.o $(PATH_LIB)ft_putnbr_fd.o 
+	$(PATH_LIB)ft_putendl_fd.o $(PATH_LIB)ft_putnbr_fd.o $(PATH_LIB)ft_printchar.o $(PATH_LIB)ft_printnbr.o\
+	$(PATH_LIB)ft_printstr.o $(PATH_LIB)ft_strlen.o $(PATH_LIB)ft_printf_hex.o $(PATH_LIB)ft_main_print.o\
+	$(PATH_LIB)ft_printf.o $(PATH_LIB)ft_unsigned_int.o $(PATH_LIB)ft_print_pointer.o $(PATH_LIB)ft_printnbr.o
+
 
 BONUS_O = $(PATH_LIB)ft_lstclear.o $(PATH_LIB)ft_lstdelone.o\
 	$(PATH_LIB)ft_lstlast.o $(PATH_LIB)ft_lstadd_back.o $(PATH_LIB)ft_lstadd_front.o\
@@ -20,7 +23,7 @@ BONUS_O = $(PATH_LIB)ft_lstclear.o $(PATH_LIB)ft_lstdelone.o\
 
 CC = cc 
 
-FT_CLI_SER = $(CC) $(FLGS) client.c -o client.o -Llibft -lft &&  $(CC) $(FLGS) server.c -o server.o 
+FT_CLI_SER = $(CC) $(FLGS) client.c -o client.o -Llibft -lft &&  $(CC) $(FLGS) server.c -o server.o -Llibft -lft
 
 RM = rm -f
 

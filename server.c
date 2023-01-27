@@ -21,7 +21,10 @@ void fun_ler(int sinal)
 
 int main()
 {
-    printf("%i\n", getpid());
+    int pin;
+
+    pin = getpid();
+    ft_printnbr(pin);
     while(1)
     {   
         signal(SIGUSR1, fun_ler);
