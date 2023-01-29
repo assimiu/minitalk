@@ -9,7 +9,7 @@ void fun_ler(int sinal)
         i = i | (0x01 << b);
     }
     b ++;
-    if(b == 7)
+    if(b == 8)
     {
         write(1, &i, 1);
         i = (0x00);
@@ -21,12 +21,15 @@ void fun_ler(int sinal)
 
 int main()
 {
-    ft_printf("%i\n", getpid());
-    while(1)
-    {   
-        signal(SIGUSR1, fun_ler);
-        signal(SIGUSR2, fun_ler);
-        pause();
-    }
-    return (0);
+	int pin;
+
+	pin = getpid();
+	ft_printf("%i\n", pin);
+	while(1)
+	{   
+		signal(SIGUSR1, fun_ler);
+		signal(SIGUSR2, fun_ler);
+		pause();
+	}
+	return (0);
 }

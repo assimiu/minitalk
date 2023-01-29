@@ -3,7 +3,7 @@
 void enviar_bits(char c, int pin)
 {
 	int i = 0;
-	while(i <= 6)
+	while(i <= 7)
 	{
 		if (c & (0x01 << i))
 		{
@@ -13,7 +13,7 @@ void enviar_bits(char c, int pin)
 		{
 			kill(pin, SIGUSR2);
 		}
-		usleep(100);
+		usleep(90);
 		i ++;
 	}
 }
@@ -21,12 +21,14 @@ void enviar_bits(char c, int pin)
 int main(int argc, char **argv)
 {
 	int	pin;
-	int i = 0;
+	int	i;
+	char	*str;
 
+	i = 0;
 	if (argc == 3)
 	{
-		pin = ft_atoi(argv[1]);
-	
+		str = argv[1];
+		pin = ft_atoi(str);
 		while(argv[2][i])
 		{
 			enviar_bits(argv[2][i], pin);
