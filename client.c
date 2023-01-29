@@ -13,7 +13,7 @@ void enviar_bits(char c, int pin)
 		{
 			kill(pin, SIGUSR2);
 		}
-		usleep(90);
+		usleep(100);
 		i ++;
 	}
 }
