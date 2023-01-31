@@ -39,12 +39,6 @@ clean:
 fclean: $(clean)
 	$(RM) $(NAME_SERVER) $(NAME_CLIENT)
 
-re: $(fclean) $(all)
-
-bonus: $(LIBFT) fclean
-	$(CC) $(CFLAGS) $(SRC_SERVER_BONUS) $(LIBFT) -o $(NAME_SERVER)
-	$(CC) $(CFLAGS) $(SRC_CLIENT_BONUS) $(LIBFT) -o $(NAME_CLIENT)
-
-rebonus: fclean bonus
+re: fclean all
 
 .PHONY: all clean fclean re bonus rebonus
