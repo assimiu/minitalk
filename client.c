@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amane <amane@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: amane <amane@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 15:41:17 by amane             #+#    #+#             */
-/*   Updated: 2023/01/31 17:14:27 by amane            ###   ########.fr       */
+/*   Updated: 2023/02/01 13:47:30 by amane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ int	main(int argc, char **argv)
 			i ++;
 		}
 		enviar_bits('\n', pin);
+		free(str);
 	}
 	else
 	{
 		write(1, "Formato de parametro errado\n", 28);
 		write(1, "Esperado: <PIN> <MENSAGEM>\n", 27);
 	}
-	free(str);
 	return (0);
 }

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: amane <amane@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/01 13:45:54 by amane             #+#    #+#              #
+#    Updated: 2023/02/01 13:53:56 by amane            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC := cc
 
 CFLAGS := -Wall -Wextra -Werror
@@ -9,9 +21,6 @@ NAME_CLIENT := client.o
 
 SRC_SERVER := server.c
 SRC_CLIENT := client.c
-
-SRC_SERVER_BONUS := server_bonus.c minitalk_bonus.c
-SRC_CLIENT_BONUS := client_bonus.c minitalk_bonus.c
 
 INCLUDES := -I. -Ilibft
 
@@ -35,10 +44,11 @@ $(LIBFT): $(shell make -C $(LIBFT_PATH) -q libft.a)
 
 
 clean:
+	$(RM) $(NAME_SERVER) $(NAME_CLIENT)
 
 fclean: $(clean)
 	$(RM) $(NAME_SERVER) $(NAME_CLIENT)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus rebonus
+.PHONY: all clean fclean re
